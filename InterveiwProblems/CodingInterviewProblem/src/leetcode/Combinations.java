@@ -11,6 +11,7 @@ import java.util.ArrayList;
 
 public class Combinations {
 	public static  ArrayList<ArrayList<Integer>> combine(int n, int k){
+		if(n < k) return null;
 		ArrayList<Integer> subset = new ArrayList<Integer>();
 		ArrayList<ArrayList<Integer>>result = new ArrayList<ArrayList<Integer>> ();
 		int[]nums = init(n);
