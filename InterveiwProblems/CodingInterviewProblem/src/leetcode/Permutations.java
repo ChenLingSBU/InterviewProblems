@@ -41,7 +41,6 @@ public class Permutations {
 		for(int i = 0; i<4; i++){
 			num[i] = i+1;
 		}
-		
 		System.out.println(Permutations.permute(num));
 
 	}
