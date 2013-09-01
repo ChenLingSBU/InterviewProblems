@@ -8,16 +8,11 @@ public class Replace20WithSpace {
 		int originalLength = charArray.length;
 		int newLength = originalLength - 2*counter;
 		int changePos;
-		char[] outChar = new char[newLength];
 		for(int i = 0; i< counter; i++){
 			changePos = findChangePosition(charArray);
 			moveForward(charArray, changePos);
-		}
-		
-		for(int i = 0; i< newLength; i++){
-			outChar[i] = charArray[i];
-		}
-		return new String(outChar);	
+		}	
+		return new String(charArray,0,newLength);	
 	}
 	
 	public static void moveForward(char[] charArray, int changePos){
