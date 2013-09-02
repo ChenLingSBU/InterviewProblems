@@ -22,7 +22,7 @@ public class CombinationSumII {
             }
             return;
         }
-        
+        if(pos == num.length) return;     
         for(int i = pos; i< num.length; i++ ){
             curSum+=num[i];
             subResult.add(num[i]);

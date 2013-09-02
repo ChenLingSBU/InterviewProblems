@@ -16,9 +16,13 @@ public class CombinationSum {
     public static void doComb(int[] candidates, int target, int pos, int curSum, ArrayList<ArrayList<Integer>> result, ArrayList<Integer> subResult){
         if(curSum > target) return; //this if statement avoids many useless recursions
         if(curSum == target){
-            result.add((ArrayList<Integer>)subResult.clone());
-            return;
+        	if(!result.contains(subResult)){
+                result.add((ArrayList<Integer>)subResult.clone());
+                return;
+                }
+                return;
         }
+        if(pos == candidates.length) return;
         
         for(int i = pos; i< candidates.length; i++ ){
             curSum+=candidates[i];
