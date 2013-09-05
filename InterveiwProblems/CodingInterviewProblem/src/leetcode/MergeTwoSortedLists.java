@@ -60,7 +60,7 @@ Comparator<ListNode> comparator = new Comparator<ListNode>() {
 	PriorityQueue<ListNode> heap = new PriorityQueue<ListNode>(2, comparator);
 	ListNode head = null;
 	ListNode cur = null;
-	if(l1!=null)
+	if(l1!=null)   // don't forget to check whether l1 and l2 are null
 		heap.add(l1);
 	if(l2!=null)
 		heap.add(l2);
