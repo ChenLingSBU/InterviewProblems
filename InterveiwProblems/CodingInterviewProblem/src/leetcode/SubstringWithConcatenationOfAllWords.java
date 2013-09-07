@@ -45,7 +45,7 @@ public class SubstringWithConcatenationOfAllWords {
                         break;
             }
             
-            if(j == L.length - 1)
+            if(j == L.length - 1) //note here, j == L.length - 1. not j == L.length. j++ is the last step in the for loop. 
                 result.add(i);      
         }                       
     }    
