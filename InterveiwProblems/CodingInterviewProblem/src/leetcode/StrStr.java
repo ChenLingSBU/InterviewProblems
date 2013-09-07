@@ -52,7 +52,7 @@ public class StrStr {
                 k = p[k];
             if(needle.charAt(k+1) == haystack.charAt(i)) // no k > -1 inside if. 
                 k++;
-            if(k == needle.length() - 1)
+            if(k == needle.length() - 1)     //k is index, so it's k == needle.length() - 1, not k == needle.length().
                 return haystack.substring(i - k); // i is index, k is index, so can do subtract operation .
         }
         
