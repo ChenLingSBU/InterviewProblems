@@ -27,7 +27,7 @@ public class StrStr {
         for(int i = 0; i < n; i++){
             if(n-i < m) break;          // avoid useless iterate.
             for(int j = 0; j < m; j++){
-                if(haystack.charAt(i+j) != needle.charAt(j)){   
+                if(haystack.charAt(i+j) != needle.charAt(j)){   //note here, haystack.charAt(i+j) not haystack.charAt(i) 
                 	break;
                 }      
                 if(j == m-1) return haystack.substring(i); // compare j and needle.length. return substring(i)
