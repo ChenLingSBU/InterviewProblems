@@ -1,5 +1,13 @@
 package leetcode;
 
+/*
+ * This problem is a classic two pointers slide problem. 
+ * use two pointers begin and end, pointed at the 0 index of String S, 
+ * 1. use end to scan from 0 index to right until all the elements in String T has been visited.
+ * 2. use begin to scan from 0 index to right until begin cannot go any further.
+ * 
+ */
+
 public class MinimumWindowsSubstring {
     public static String minWindow(String S, String T) {
         int[] expectedCount = new int[256];
@@ -43,8 +51,8 @@ public class MinimumWindowsSubstring {
         
     }
 	public static void main(String[] args) {
-		String S = "a";
-		String T = "a";
+		String S = "ADOBECODEBANC";
+		String T = "ABC";
 		System.out.print(MinimumWindowsSubstring.minWindow(S, T));
 
 	}
