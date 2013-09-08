@@ -1,7 +1,7 @@
 package leetcode;
 
 /*
- * This problem is a classic two pointers slide problem. 
+ * This problem is a classical two pointers slide problem. 
  * use two pointers begin and end, pointed at the 0 index of String S, 
  * 1. use end to scan from 0 index to right until all the elements in String T has been visited.
  * 2. use begin to scan from 0 index to right until begin cannot go any further.
