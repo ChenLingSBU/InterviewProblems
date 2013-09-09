@@ -9,8 +9,6 @@ package leetcode;
  * 
  */
 
-
-
 public class SortColors {
 	
     public static void sortColors(int[] A) {
