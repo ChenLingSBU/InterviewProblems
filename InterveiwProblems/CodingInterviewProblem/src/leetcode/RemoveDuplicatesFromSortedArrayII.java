@@ -8,12 +8,13 @@ public class RemoveDuplicatesFromSortedArrayII {
         if(A.length == 1)
             return 1;
         int pos = 1;
-        int count = 0;
+        int count = 1;
         for(int i = 1; i < A.length; i++ ){
             if(A[i] == A[i-1]){
                 count ++;
-                if(count<2){
+                if(count <= 2){
                     A[pos++] = A[i]; //note, it's not correct, if written as pos++.
+                	
                 }
                 continue;
             }
