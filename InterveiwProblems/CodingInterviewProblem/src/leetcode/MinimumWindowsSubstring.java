@@ -5,7 +5,9 @@ package leetcode;
  * use two pointers begin and end, pointed at the 0 index of String S, 
  * 1. use end to scan from 0 index to right until all the elements in String T has been visited.
  * 2. use begin to scan from 0 index to right until begin cannot go any further.
- * 
+ * note:
+ * 	when deal with duplicate problems, if it's a String problem, always consider hashtable for help.
+ *  if it's a Char type problem, like the problem here, consider array[256]//ascII for help. 
  */
 
 public class MinimumWindowsSubstring {
