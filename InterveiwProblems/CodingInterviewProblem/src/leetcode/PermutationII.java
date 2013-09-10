@@ -25,7 +25,7 @@ public class PermutationII {
         }
         
         for(int i = 0; i < num.length; i++){
-            if(used[i] || i!=0 && num[i] == num[i-1] && used[i-1])// if without the conditions after ||, it's a standard problem of permutation.
+            if(used[i] || i!=0 && num[i] == num[i-1] && used[i - 1])// if without the conditions after ||, it's a standard problem of permutation.
                 continue;
             subResult.add(num[i]);
             used[i] = true;

@@ -76,8 +76,6 @@ public class NextPermutation {
 	public static void main(String[] args) {
 		int[] num = {1,1,5};
 		NextPermutation.nextPermutation(num);
-		for(int i = 0; i< num.length; i++){
-			System.out.print(" "+ num[i] );
-		}
+		System.out.println(Arrays.toString(num));
 	}
 }
