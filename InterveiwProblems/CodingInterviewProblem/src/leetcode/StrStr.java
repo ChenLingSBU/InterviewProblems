@@ -49,7 +49,7 @@ public class StrStr {
         for(int i = 0; i < haystack.length(); i++){ //i starts from 0
             
             while(k > -1 && needle.charAt(k+1) != haystack.charAt(i))
-                k = p[k];
+                k = p[k];     //k shift p[k] to right
             if(needle.charAt(k+1) == haystack.charAt(i)) // no k > -1 inside if. 
                 k++;
             if(k == needle.length() - 1)     //k is index, so it's k == needle.length() - 1, not k == needle.length().
