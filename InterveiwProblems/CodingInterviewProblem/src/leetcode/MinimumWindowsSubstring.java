@@ -5,6 +5,10 @@ package leetcode;
  * use two pointers begin and end, pointed at the 0 index of String S, 
  * 1. use end to scan from 0 index to right until all the elements in String T has been visited.
  * 2. use begin to scan from 0 index to right until begin cannot go any further.
+ * 	  The rule for begin index is:
+ * 				1.) if the char at begin of S is not in T, then begin ++;
+ * 				2.) if there's a duplicate of char at begin of S after begin, begin can move forward.
+ * 					if in this case, we need decrease realCounts by 1. 
  * note:
  * 	when deal with duplicate problems, if it's a String problem, always consider hashtable for help.
  *  if it's a Char type problem, like the problem here, consider array[256]//ascII for help. 
