@@ -27,6 +27,11 @@ public class FourSum {
                         left++;
                         continue;
                     }
+                    
+                    if(right+1 < num.length && num[right] == num[right + 1]){
+                        right--;
+                        continue;
+                    }
                         
                     int sum = num[i] + num[j] + num[left] + num[right];
                     if(sum == target){
