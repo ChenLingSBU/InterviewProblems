@@ -4,7 +4,7 @@ package other;
  * It's a Facebook interview question.
  * use classic two pointers/slide window method.
  *
- * Implement a function string balanceParanthesis(String s); which given a String sconsisting of some
+ * Implement a function string balanceParanthesis(String s); which given a String s consisting of some
  * parenthesis returns a string s1 in which parenthesis are balanced and differences between s and s1 are minimum. 
  * Eg - "(ab(xy)u)2)" -> "(ab(xy)u)2" ")))(((" ->""
  *
