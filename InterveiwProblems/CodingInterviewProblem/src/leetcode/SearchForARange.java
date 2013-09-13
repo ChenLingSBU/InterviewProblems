@@ -26,13 +26,11 @@ public class SearchForARange {
             result[1] = end;
             return result;
         }
-        
-        return result;
-        
+        return result;       
      }
-     
-     
-     public static int findStart(int[] A, int left, int right, int target){ // return -1 if cannot find start position
+    
+    
+    public static int findStart(int[] A, int left, int right, int target){ // return -1 if cannot find start position
          if(left > right) return -1;
          int mid = (left + right)/2;
          if(A[mid] == target){
