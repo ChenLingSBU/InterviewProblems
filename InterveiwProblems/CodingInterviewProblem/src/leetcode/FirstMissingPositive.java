@@ -11,7 +11,7 @@ package leetcode;
  * 
  * Notes: 
  * 		note1: use A[i] != i + 1;
- * 		note2: watch out here, if A[i] <= 0, we should break. and A[i] == A[A[i] - 1] is used to deal with duplicates.
+ * 		note2: be careful of the corner cases, if A[i] <= 0, we should break. and A[i] == A[A[i] - 1] is used to deal with duplicates.
  * 
  */
 
