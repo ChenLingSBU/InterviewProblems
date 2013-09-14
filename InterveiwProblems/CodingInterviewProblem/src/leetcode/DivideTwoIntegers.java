@@ -56,6 +56,6 @@ public class DivideTwoIntegers {
         
     }
 	public static void main(String[] args) {
-		System.out.println( DivideTwoIntegers.divide(8, 2));
+		System.out.println( DivideTwoIntegers.divide(1, 1));
 	}
 }
