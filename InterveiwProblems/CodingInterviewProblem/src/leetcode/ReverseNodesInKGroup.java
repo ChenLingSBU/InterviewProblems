@@ -13,7 +13,7 @@ package leetcode;
 
 import leetcodeLib.ListNode;
 public class ReverseNodesInKGroup {
-       /* public static ListNode reverseKGroup(ListNode head, int k) {
+       public static ListNode reverseKGroup(ListNode head, int k) {
             if(head == null) return null;
             if(head.next == null || k == 1)
                 return head;
@@ -57,57 +57,8 @@ public class ReverseNodesInKGroup {
             }
             
             return newHead.next;
-        }*/
-	
-	
-    public static ListNode reverseKGroup(ListNode head, int k) {
-        if(head == null) return head;
-        
-        if(k == 1) return head;
-        
-        ListNode newHead = new ListNode(Integer.MIN_VALUE);
-        newHead.next = head;
-        ListNode pre = newHead;
-        ListNode cur = head;
-        ListNode post = cur.next;
-        while(cur != null){
-            int step = 0;
-            post = cur.next;
-            while(step < k - 1 && post != null){
-                ListNode temp = post.next;
-                post.next = cur;
-                cur = post;
-                post = temp;
-                step++;
-            }
-            
-            if(step != k - 1){
-                 k = 0;
-                ListNode temp = post;
-                post = cur;
-                cur = temp;
-                while(k < step){
-                    temp = post.next;
-                    post.next = cur;
-                    cur = post;
-                    post = temp;
-                    k++;
-                }
-                break;
-            }
-            
-           
-           ListNode temp = pre.next;
-           pre.next = cur;
-           temp.next = post;
-           pre = temp;
-           cur = pre.next;
-            
         }
-        
-        return newHead.next;
-        
-    }
+	
 	public static void main(String[] args) {
 		ListNode n1 = new ListNode(1);
 		ListNode n2 = new ListNode(2);
