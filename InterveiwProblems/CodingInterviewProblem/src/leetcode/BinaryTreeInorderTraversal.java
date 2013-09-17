@@ -24,7 +24,7 @@ public class BinaryTreeInorderTraversal {
 
 	public static ArrayList<Integer> inorderTraversal(TreeNode root){
         ArrayList<Integer> result = new ArrayList<Integer>();
-        if(root == null) return null;
+        if(root == null) return result;
         Stack<TreeNode> stack = new Stack<TreeNode>();
         stack.push(root);
         while(!stack.isEmpty()){
