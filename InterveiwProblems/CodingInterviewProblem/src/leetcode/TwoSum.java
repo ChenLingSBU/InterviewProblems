@@ -75,8 +75,8 @@ public class TwoSum {
     }
      
     public static void main(String[] args) {
-		int[] num = {2,1,9,4,4,56,90,3};
-		int target = 8;
+		int[] num = {5, 75, 25};
+		int target = 100;
 		//int[] result = TwoSum.twoSumBruteForce(num, target);
 		int[] result = TwoSum.twoSumNlogn(num, target);
 		System.out.print(""+ result[0]+" ");
