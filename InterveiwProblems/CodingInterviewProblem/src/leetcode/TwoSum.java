@@ -1,7 +1,9 @@
 package leetcode;
 
 /*
- * There are two algorithms, one is brute force which is O(N*N), another is two pointers scan, O(NlogN);
+ * There are three algorithms, one is brute force which is O(N*N), another is two pointers scan, O(NlogN), another is using hash.
+ * 
+ * note: in the twoSumN method, look up hashmap first, then put new element into hash, by this way we can deal with duplicates.
  */
 
 import java.util.Arrays;
@@ -73,12 +75,30 @@ public class TwoSum {
     	}
     	return null;	
     }
+    
+   public static int[] twoSumN(int[] numbers, int target){
+	   int[] result = new int[2];
+	   Hashtable<Integer, Integer> map = new Hashtable<Integer, Integer> ();
+	   for(int i = 0; i < numbers.length; i++){ //note
+		   if(map.containsKey(target - numbers[i])){
+			   result[0] = Math.min(i + 1, map.get(target - numbers[i]));
+			   result[1] = Math.max(i + 1, map.get(target - numbers[i]));
+			   return result;
+		   }
+		   map.put(numbers[i], i + 1);
+		   
+	   }
+	   
+	   return result;
+   }
      
     public static void main(String[] args) {
-		int[] num = {5, 75, 25};
-		int target = 100;
+		int[] num = {2,1,9,4,4,56,90,3};
+		int target = 8;
 		//int[] result = TwoSum.twoSumBruteForce(num, target);
-		int[] result = TwoSum.twoSumNlogn(num, target);
+		//int[] result = TwoSum.twoSumNlogn(num, target);
+		
+		int[] result = TwoSum.twoSumN(num, target);
 		System.out.print(""+ result[0]+" ");
 		System.out.print(""+ result[1]+ " ");
 	}
