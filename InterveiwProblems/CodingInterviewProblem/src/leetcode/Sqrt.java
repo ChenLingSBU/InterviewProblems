@@ -34,7 +34,7 @@ public class Sqrt {
     
     public static int sqrtNewtown(int x) {
         
-    	if(x == 0) return 1;
+    	if(x == 0) return 0;
         double EPS = 0.000000001;
         
         double value = x;
