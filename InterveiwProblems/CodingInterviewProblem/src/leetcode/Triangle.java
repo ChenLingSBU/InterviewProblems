@@ -8,11 +8,7 @@ public class Triangle {
     public static int minimumTotal(ArrayList<ArrayList<Integer>> triangle) {
         if(triangle == null || triangle.size() == 0) return 0;
         int[] minSum = new int[triangle.get(triangle.size() - 1).size()];
-        minSum[0] = triangle.get(0).get(0);
-        for(int i = 1; i < minSum.length; i++){
-            minSum[i] = Integer.MAX_VALUE;
-        }
-        
+        minSum[0] = triangle.get(0).get(0);      
         for(int i = 1; i < triangle.size(); i++){
             for(int j = triangle.get(i).size() - 1; j >= 0; j--){
                 if(j == 0)
@@ -33,6 +29,7 @@ public class Triangle {
 		ArrayList<ArrayList<Integer>> triangle = new ArrayList<ArrayList<Integer>>();
 		ArrayList<Integer> sub = new ArrayList<Integer>();
 		sub.add(1);
+		sub.add(-10);
 		ArrayList<Integer> sub1 = new ArrayList<Integer> ();
 		sub1.add(2);
 		sub1.add(3);
