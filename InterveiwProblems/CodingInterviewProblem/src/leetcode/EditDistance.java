@@ -1,5 +1,14 @@
 package leetcode;
 
+
+/*
+ * note: 1. initial base case.
+ * note: 2. dp[i][j] i, and j is the prefix of word1 and word2, so i and j is the ith element and jth element, 
+ * therefore the size of dp is [word1.length + 1][word2.length + 1]
+ * 
+ * note: 3, when we wanna to check whether word1[i] == word[j], we should use the index, it's i - 1, and j - 1. 
+ */
+
 public class EditDistance {
 	
     public int minDistance(String word1, String word2) {
