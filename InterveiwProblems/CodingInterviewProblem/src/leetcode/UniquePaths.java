@@ -1,5 +1,16 @@
 package leetcode;
 
+/*
+ * comment: 
+ * it's an easy DP practice problem. notes are as below:
+ * 
+ *  here the index of the starting position is (0,0), so the index of the ending position is (m - 1, n - 1);
+ *  and there's a restriction that in the first row, it can only be move from left, and similar to the first col. 
+ *  use rolling array to save space.
+ *  
+ *  if don't use rolling array, it should be like this :
+ *  dp[i][j] = dp[i - 1][j] + dp[i][j - 1];
+ */
 
 
 public class UniquePaths {
