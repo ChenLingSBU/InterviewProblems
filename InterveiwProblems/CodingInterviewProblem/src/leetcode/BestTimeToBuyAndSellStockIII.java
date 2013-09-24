@@ -2,10 +2,17 @@ package leetcode;
 
 
 
-
 /*
- * 
+ * the meaning of the problem is to make the array into 2 partitions, thus the total sum of the two partitions are maximum.
+ * The tricky is :
+ * we scan the array two times. 
+ * 1. the first time, scan the array from left to right, and store info in firstPart[i], i means maximum profit ending at i
+ * 2. the second time, scan from the right to left, store info in secondPart[j], here j means maximum profit start at j.
+ * Thus we have two windows, and every time we store the max sum of firstPart[i] and secondPart[i].
+ * By this way we have made the max profit at most two transactions.  
  */
+
+
 public class BestTimeToBuyAndSellStockIII {
 
     public int maxProfit(int[] prices) {
