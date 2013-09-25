@@ -1,10 +1,9 @@
 package leetcode;
 
 /*
- * test cases:
- * input n = 3, 
+ * the result is a ArrayList containing the root node of each tree.
  * 
- * output: [{1,#,2,#,3},{1,#,3,2},{2,1,3},{3,1,#,#,2},{3,2,#,1}]
+ * this problem can still be solved by DP. i'm going to implement dp solution later.
  */
 
 
