@@ -35,7 +35,7 @@ public class RegularExpressionMatching {
 	    
 	public static void main(String[] args) {
 			String s = "aa";
-			String p = "a";
+			String p = "a*";
 			System.out.println(RegularExpressionMatching.isMatch(s, p));
 	}
 }
