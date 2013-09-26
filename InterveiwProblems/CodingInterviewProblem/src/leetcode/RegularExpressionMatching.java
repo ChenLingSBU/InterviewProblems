@@ -34,8 +34,8 @@ public class RegularExpressionMatching {
 	    
 	    
 	public static void main(String[] args) {
-			String s = "aa";
-			String p = "a*";
+			String s = "aaaac";
+			String p = "ab*c*";
 			System.out.println(RegularExpressionMatching.isMatch(s, p));
 	}
 }
