@@ -23,15 +23,14 @@ public class NQueens {
 	        
 	        if(row == n){
 	           String[] str = new String[n];
+	           Arrays.fill(str,"");
 	            for(int r = 0; r < n; r++){
-	            	char[] c = new char[n];
 	                for(int col = 0; col < n; col++){
 	                    if(columns[r] == col)
-	                        c[col] = 'Q';
+	                        str[r] = str[r].concat("Q");
 	                    else
-	                        c[col] = '.';
-	                }
-	                str[r] = new String(c);
+	                    	str[r] = str[r].concat(".");       
+	                }  
 	            }
 	            result.add(str);
 	            return;
