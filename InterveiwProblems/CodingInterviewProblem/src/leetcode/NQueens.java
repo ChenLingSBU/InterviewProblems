@@ -14,12 +14,12 @@ public class NQueens {
 	            result.add(str);
 	            return result;
 	        }
-	       Integer[] columns = new Integer[n];
+	       int[] columns = new int[n];
 	       placeQueens(result, columns, n, 0);
 	       return result;
 	    }
 	    
-	    public static void placeQueens(ArrayList<String[]> result, Integer[] columns, int n, int row){
+	    public static void placeQueens(ArrayList<String[]> result, int[] columns, int n, int row){
 	        
 	        if(row == n){
 	           String[] str = new String[n];
@@ -48,7 +48,7 @@ public class NQueens {
 	   
 	    }
 	    
-	    public static boolean checkValid(Integer[] columns, int r, int col, int n){
+	    public static boolean checkValid(int[] columns, int r, int col, int n){
 	        for(int row1 = 0; row1 < r; row1++){
 	            int columns2 = columns[row1];
 	            if(columns2 == col)
