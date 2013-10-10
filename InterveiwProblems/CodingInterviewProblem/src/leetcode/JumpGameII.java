@@ -2,6 +2,10 @@ package leetcode;
 
 /*
  * current using method is greedy, another method is dp, will implent dp method later.
+ * greedy:
+ * record the longest distance last time and record the current longest distance.
+ * it's obvious that current longest distance depends on the longest distance jump in last time.
+ * when i > lastend(last longest distance), it means every possible value has been considered, and we need another jump.
  */
 
 public class JumpGameII {
