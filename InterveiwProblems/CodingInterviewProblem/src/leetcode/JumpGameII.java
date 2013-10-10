@@ -1,7 +1,7 @@
 package leetcode;
 
 /*
- * classic two pointers algorithm.
+ * current using method is greedy, another method is dp, will implent dp method later.
  */
 
 public class JumpGameII {
