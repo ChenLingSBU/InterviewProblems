@@ -1,5 +1,12 @@
 package leetcode;
 
+
+
+
+/*
+ * note: start and end might be or might not be in the Dictionary
+ * 
+ */
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.ArrayList;
