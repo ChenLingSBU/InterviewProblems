@@ -5,6 +5,7 @@ package leetcode;
  * sum is the total amount of gas at current time, is the gas is not enough for reaching the next station, 
  * advance start until the amount of gas is enough for reaching the next station from current station.
  * if there doesn't exist such a start point, we set up start to next station, and set up sum to 0. 
+ * note: in the for loop, the condition should be "i < len + start && start < len". don't forget "start < len"
  */
 
 public class GasStation {
@@ -21,7 +22,7 @@ public class GasStation {
         
         int sum = 0, start = 0;
         
-        for(int i = 0; i < len + start && start < len; ){
+        for(int i = 0; i < len + start && start < len; ){ //note
             sum += flag[i];
             if(sum >= 0){
                 i++;
