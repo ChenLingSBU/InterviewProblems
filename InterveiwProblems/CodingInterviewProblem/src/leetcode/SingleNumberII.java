@@ -8,7 +8,7 @@ public class SingleNumberII {
 	/*
 	 * note here, must use long a. otherwise would be error here. 
 	 */
-    public int singleNumber(int[] A) {
+    public static int singleNumber(int[] A) {
         int[] arr = new int[32];
         for(int num : A)
            generateBits(arr, num);
@@ -20,7 +20,7 @@ public class SingleNumberII {
         return result;
      }
      
-     public void generateBits(int[] A, int num){
+     public static void generateBits(int[] A, int num){
          int counter = 0;
          long a = 1;//note
          while(counter < 32){
@@ -31,6 +31,6 @@ public class SingleNumberII {
      }
      
 	public static void main(String[] args) {
-
+	
 	}
 }
