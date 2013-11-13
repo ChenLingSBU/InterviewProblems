@@ -95,7 +95,7 @@ public class FindKBigestElements {
 	public static void main(String[] args) {
 		int[] a = {1, 23, 12, 9, 30, 2, 50};
 		int k = 3;
-		System.out.println(FindKBigestElements.findKBiggestQuickSelection(a, k));
+		System.out.println(FindKBigestElements.findKBiggestHeap(a, k).toString());
 		System.out.println(Arrays.toString(FindKBigestElements.findKBiggestQuickSelection(a, k)));
 	}
 }
