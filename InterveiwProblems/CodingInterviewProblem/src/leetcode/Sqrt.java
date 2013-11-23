@@ -12,25 +12,22 @@ package leetcode;
 public class Sqrt {
 
     public static int sqrtBinary(int x) {
-        
-        int start = 0;
-        int maxSqrt =(int)Math.sqrt(Integer.MAX_VALUE);
-        int end = x/2 < maxSqrt? x/2+1:maxSqrt; // note1. 
-        while(start <= end){
-            int mid = (start + end)/2;
-            
-            int v = mid*mid;
-            if(v == x)
-                return mid;
-            if(v < x)
-              start = mid + 1;
+        long left = 0;
+        long right = x;
+        long mid;
+        long v;
+        while(left <= right){
+            mid = (left + right)/2;
+            v = mid * mid;
+            if(v == x) return (int)mid;
+            else if(v > x)
+                right = mid - 1;
             else
-                end = mid - 1;
+                left = mid + 1;
         }
         
-        return (start + end)/2;
+        return ((int)left + (int)right)/2;
     }
-    
     
     public static int sqrtNewtown(int x) {
         
