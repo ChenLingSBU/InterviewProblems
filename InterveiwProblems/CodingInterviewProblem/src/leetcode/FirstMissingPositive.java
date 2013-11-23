@@ -36,7 +36,7 @@ public class FirstMissingPositive {
      }
 	
 	public static void main(String[] args) {
-		int[] A = {3,4,1,1,7,9};
+		int[] A = {3,-1,23,7,21,12,8,9,18,21,-1,16,1,13,-3,22,23,13,7,14,3,6,4,-3};
 		//int [] A ={1};
 		System.out.println(FirstMissingPositive.firstMissingPositive(A));
 	}
