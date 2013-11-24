@@ -5,9 +5,6 @@ package leetcode;
  *  
  *  Instead, we should use the tricky that we create two lists, one is less than x, the other is no-less than x, then connect them together!
  *  
- *  Notes: 
- *  		note1 avoid bugs that in case {1,1}, x = 0, in this case the first list is null;
- *  		note2, if we do not do this, the last element might have connection to the element in the original list. thus cause cycle bugs. 
  */
 
 
@@ -16,37 +13,32 @@ import leetcodeLib.ListNode;
 public class PartitionList {
 	
     public static ListNode partition(ListNode head, int x) {
-        if(head == null || head.next == null) return head;
+        if(head == null) return null;
         
-        ListNode dummyFrontHead = new ListNode(Integer.MIN_VALUE);
-        ListNode dummyFrontEnd = dummyFrontHead;
-        
-        ListNode dummyBackHead = new ListNode(Integer.MIN_VALUE);
-        ListNode dummyBackEnd = dummyBackHead;
+        ListNode dummyFirst = new ListNode(-1);
+        ListNode firstEnd = dummyFirst;
+        ListNode dummySecond = new ListNode(-1);
+        ListNode secondEnd = dummySecond;
         
         ListNode cur = head;
         
-        while(cur != null){
+        while( cur != null){
             if(cur.val < x){
-                dummyFrontEnd.next = cur;
-                dummyFrontEnd = dummyFrontEnd.next;
+                firstEnd.next = cur;
+                firstEnd = firstEnd.next;
             }else{
-                dummyBackEnd.next = cur;
-                dummyBackEnd = dummyBackEnd.next;
+                secondEnd.next = cur;
+                secondEnd = secondEnd.next;
             }
             
             cur = cur.next;
         }
         
-        if(dummyBackHead.next != null)  //note1
-            dummyFrontEnd.next = dummyBackHead.next;
+        secondEnd.next = null;
         
-        if(dummyBackEnd.next != null)  //note2
-        	dummyBackEnd.next = null;
+        firstEnd.next = dummySecond.next;
         
-        
-        return dummyFrontHead.next;
-            
+        return dummyFirst.next;
     }
     
 	
@@ -63,8 +55,15 @@ public class PartitionList {
 		n4.next = n5;
 		n5.next = n6;
 		int x = 3;
+		ListNode head = n1;
+		while(head != null){
+			System.out.print(head.val + " -> ");
+			head = head.next;
+		}
 		
-		ListNode head = PartitionList.partition(n1, x);
+		System.out.println("null");
+		
+		head = PartitionList.partition(n1, x);
 		
 		while(head != null){
 			System.out.print(head.val + " -> ");
