@@ -22,29 +22,30 @@ import leetcodeLib.ListNode;
 public class RemoveNthNodeFromEndOfList {
 	
     public ListNode removeNthFromEnd(ListNode head, int n) {
-        if(head.next == null) return null; // {1}, 1
+        if(head == null) return head;
         
-        ListNode p1 = new ListNode(Integer.MIN_VALUE);
+        ListNode dummyHead = new ListNode(-1);
+        dummyHead.next = head;
+        ListNode tail = head;
+        ListNode cur = head;
+        ListNode pre = dummyHead;
         
-        p1.next = head;
-        ListNode p2 = p1;
-        
-        for(int i = 0; i < n; i++){
-            if(p2.next != null)
-                p2 = p2.next;
+        while(n - 1 > 0){
+            tail = tail.next;
+            n--;
         }
         
-        while(p2!=null && p2.next != null){
-            p2 = p2.next;
-            p1 = p1.next;
+        while(tail.next != null){
+            tail = tail.next;
+            cur = cur.next;
+            pre = pre.next;
         }
         
-        if(p1.next == head){
-            return p1.next.next;
-        }
-        p1.next = p1.next.next;
+        pre.next = cur.next;
+        cur.next = null;
         
-        return head;    
+        return dummyHead.next;
+        
     }
 	
     
