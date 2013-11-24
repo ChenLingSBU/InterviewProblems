@@ -13,33 +13,28 @@ package leetcode;
  */
 import leetcodeLib.ListNode;
 public class RemoveDuplicatesFromSortedList {
-    public static ListNode deleteDuplicates(ListNode head) {
-        if(head == null){
-            return null;
+    
+	public static ListNode deleteDuplicates(ListNode head) {
+        if(head == null) return null;
+        
+        ListNode dummyHead = new ListNode(-1);
+        dummyHead.next = head;
+        ListNode pre = dummyHead.next;
+        ListNode cur = dummyHead.next.next;
+        
+        while(cur != null){
+            if(pre.val == cur.val){
+                pre.next = cur.next;
+                cur = cur.next;
+            }else{
+                pre = pre.next;
+                cur = cur.next;
+            }
         }
         
-        if(head.next == null){
-            return head;
-        }
-        ListNode newHead = head;
-        ListNode cur = head;
-        head = head.next;
-        while(head != null){
-            if(head.val == cur.val){
-                head = head.next;
-                continue;
-            }
-            else{
-                cur.next.val = head.val;
-                cur = cur.next;
-                head = head.next;
-            }
-                
-            
-        }
-        cur.next = null;
-        return newHead;
+        return dummyHead.next;
     }
+    
 	public static void main(String[] args) {
 		ListNode head = new ListNode(1);
 		ListNode node1 = new ListNode(1);
