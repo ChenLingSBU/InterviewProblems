@@ -45,7 +45,15 @@ public class RemoveDuplicatesFromSortedList {
 		node1.next = node2;
 		node2.next = node3;
 		node3.next = node4;
-		ListNode cur = RemoveDuplicatesFromSortedList.deleteDuplicates(head);
+		ListNode cur = head;
+		while(cur != null){
+			System.out.print(" " + cur.val);
+			cur = cur.next;
+		}
+		
+		System.out.println();
+		
+	    cur = RemoveDuplicatesFromSortedList.deleteDuplicates(head);
 		while (cur != null){
 			System.out.print(" " + cur.val);
 			cur = cur.next;
