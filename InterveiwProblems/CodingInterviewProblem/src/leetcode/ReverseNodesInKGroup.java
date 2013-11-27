@@ -13,51 +13,50 @@ package leetcode;
 
 import leetcodeLib.ListNode;
 public class ReverseNodesInKGroup {
-       public static ListNode reverseKGroup(ListNode head, int k) {
-            if(head == null) return null;
-            if(head.next == null || k == 1)
-                return head;
-                
-            ListNode newHead = new ListNode(Integer.MIN_VALUE);
-            newHead.next = head;
-            ListNode cur = head;
-            ListNode pre = newHead;
-            ListNode post = cur.next;
+    public static ListNode reverseKGroup(ListNode head, int k) {
+        if(head == null) return head;
+        if(head.next == null || k == 1) return head;
+        
+        ListNode dummyHead = new ListNode(-1);
+        dummyHead.next = head;
+        ListNode pre = dummyHead;
+        ListNode cur = head;
+    
+        while(cur != null){
             
-            while(cur != null){
-                int step = 0;
-                post = cur.next;
-                while(step < k - 1 && post != null){
-                    ListNode temp = post.next;
-                    post.next = cur;
-                    cur = post;
-                    post = temp;
-                    step++;
-                }
-                
-                if(step != k - 1){ // note 1.     
-                    ListNode temp = post; // note 2. 
-                    post = cur;
-                    cur = temp;
-                    k = 0;
-                    while(k < step){
-                        temp = post.next;
-                        post.next = cur;
-                        cur = post;
-                        post = temp;
-                        k++;
-                    }                  
-                    break;
-                }              
-                ListNode temp = pre.next;
-                pre.next = cur;
-                temp.next = post;
-                pre = temp;
-                cur = pre.next;        
+            int step = 0;
+            ListNode post = cur.next;
+            while(step < k - 1 && post != null){
+                ListNode tmp = post.next;
+                post.next = cur;
+                cur = post;
+                post = tmp;
+                step++;
             }
             
-            return newHead.next;
+            if(step != k - 1){
+                
+                while(step >= 0){
+                    ListNode tmp = cur.next;
+                    cur.next = post;
+                    post = cur;
+                    cur = tmp;
+                    step--;
+                }
+                
+                break;
+            }
+            
+            
+            ListNode tmp = pre.next;
+            tmp.next = post;
+            pre.next = cur;
+            pre = tmp;
+            cur = pre.next;
         }
+        
+        return dummyHead.next;
+	}
 	
 	public static void main(String[] args) {
 		ListNode n1 = new ListNode(1);
