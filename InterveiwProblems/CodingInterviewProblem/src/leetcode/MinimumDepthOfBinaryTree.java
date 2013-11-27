@@ -5,6 +5,9 @@ package leetcode;
  * Remember how to get the height of a BT? max(get(root.left) + get(root.right)) + 1;
  * 
  * the idea is similar, but cannot directly use equation above, use this as note1. 
+ * 
+ * why not directly recurse minDepth(node) wrong? consider tree 1, 2, root is 1, 2 is the right left.
+ * use this method the min height should be 0, but the real min height is 2. 
  */
 
 import leetcodeLib.TreeNode;
